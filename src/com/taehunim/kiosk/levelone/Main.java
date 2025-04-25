@@ -10,7 +10,7 @@ public class Main {
         int selectNumber;
 
         // 반복 시작지점
-        while (true) {
+        kioskSystem: while (true) {
 
             // 메뉴 출력
             System.out.println("[Real Buger 메뉴]");
@@ -36,7 +36,9 @@ public class Main {
 
             // 변환 받은 정수 판별
             switch (selectNumber) {
-                case 0 -> System.exit(0);
+                case 0 -> {
+                 break kioskSystem;
+                }
                 case 1 -> System.out.println("ShackBurger 주문 완료");
                 case 2 -> System.out.println("SmokeShack 주문 완료");
                 case 3 -> System.out.println("Cheeseburger 주문 완료");
