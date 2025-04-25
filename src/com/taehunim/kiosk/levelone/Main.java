@@ -21,10 +21,6 @@ public class Main {
             userInput = scanner.nextLine();
             try {
                 selectNumber = Integer.parseInt(userInput);
-                if (selectNumber < 0 || selectNumber > 4) {
-                    System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
-                    continue;
-                }
             } catch (NumberFormatException e) {
                 System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
                 continue;
@@ -36,14 +32,8 @@ public class Main {
                 case 2 -> System.out.println("SmokeShack 주문 완료");
                 case 3 -> System.out.println("Cheeseburger 주문 완료");
                 case 4 -> System.out.println("Hamburger 주문 완료");
+                default -> System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
             }
-
-
-
-
-            System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
         }
-
-
     }
 }
