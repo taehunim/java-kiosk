@@ -29,10 +29,18 @@ public class Main {
                 System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
                 continue;
             }
-            System.out.println("ShackBurger 주문 완료");
-            System.out.println("SmokeShack 주문 완료");
-            System.out.println("Cheeseburger 주문 완료");
-            System.out.println("Hamburger 주문 완료");
+
+            switch (selectNumber) {
+                case 0 -> System.exit(0);
+                case 1 -> System.out.println("ShackBurger 주문 완료");
+                case 2 -> System.out.println("SmokeShack 주문 완료");
+                case 3 -> System.out.println("Cheeseburger 주문 완료");
+                case 4 -> System.out.println("Hamburger 주문 완료");
+            }
+
+
+
+
             System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
         }
 
