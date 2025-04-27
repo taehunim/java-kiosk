@@ -18,5 +18,15 @@ public class Main {
                 "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거" ));
         menuItem.add(new MenuItem("Hamburger", 5400,
                 "비프패티를 기반으로 야채가 들어간 기본버거"));
+
+        // 반복문 시작
+        while(true) {
+            for(int i = 0; i <menuItem.size(); i++) {
+                MenuItem menu = menuItem.get(i);
+                System.out.println((i + 1) + ". " + menu.getBugerName() + "   | W" +
+                        (menu.getBugerPrice()*0.001) + " | " + menu.getBugerInfo());
+            }
+            break;  // 임시 break;
+        }
     }
 }
