@@ -15,5 +15,9 @@ public class Main {
 
 
         Kiosk kiosk = new Kiosk(interaction);
+
+
+        // 필수 method 호출
+        kiosk.startKiosk();
     }
 }
