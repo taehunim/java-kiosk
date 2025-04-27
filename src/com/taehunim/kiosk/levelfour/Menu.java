@@ -2,6 +2,11 @@ package com.taehunim.kiosk.levelfour;
 
 import java.util.List;
 
+/**
+ * Menu는 MenuItem 객체들을 관리하는 class입니다.
+ *
+*/
+
 public class Menu {
 
     // 속성
