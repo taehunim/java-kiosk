@@ -5,13 +5,14 @@ package com.taehunim.kiosk.levelfive;
  * 이름 , 정보, 가격 세가지 필드를 가지고 있습니다.
  * 생성자를 통해 이를 외부에서 주입받습니다.
  * getter를 통해 외부에 정보를 전달할 수 있습니다.
+ * setter를 통해 외부에서 상품의 가격을 조정할 수 있습니다.
  */
 public class MenuItem {
 
     // 속성
     private final String goodsName;
     private final String goodsInfo;
-    private final int goodsPrice;
+    private int goodsPrice;
 
     // 생성자
     MenuItem(String goodsName, int goodsPrice, String goodsInfo) {
@@ -34,5 +35,13 @@ public class MenuItem {
     // 저장한 설명을 꺼내주는 기능
     public String getGoodsInfo() {
         return goodsInfo;
+    }
+
+    public void setGoodsPrice(int goodsPrice) {
+        if (goodsPrice > 0) {
+           this.goodsPrice = goodsPrice;
+        } else {
+            System.out.println("올바른 값을 입력하세요.");
+        }
     }
 }
