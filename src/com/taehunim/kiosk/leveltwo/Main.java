@@ -43,7 +43,7 @@ public class Main {
         while (true) {
 
             // 메뉴 출력
-            System.out.println("[Real Buger 메뉴]");
+            System.out.println("[Real Burger 메뉴]");
             for (int i = 0; i < menuItems.size(); i++) {
                 MenuItem menu = menuItems.get(i);
                 System.out.println((i + 1) + ". " + menu.getBurgerName() + "   | W" +
