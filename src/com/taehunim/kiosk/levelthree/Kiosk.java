@@ -14,7 +14,7 @@ public class Kiosk {
     // 속성
     private final List<MenuItem> menuItems;
     private final Scanner scanner;
-    private String Userinput;
+    private String userinput;
     private int selectNumber;
 
     // 생성자
@@ -45,16 +45,17 @@ public class Kiosk {
 
             // 사용자 메뉴 선택
             System.out.print("입력창 : ");
-            Userinput = scanner.nextLine();
+            userinput = scanner.nextLine();
 
             // 입력된 문자열 정수로 변환
             try {
-                selectNumber = Integer.parseInt(Userinput);
+                selectNumber = Integer.parseInt(userinput);
             } catch (NumberFormatException e) {
                 System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
                 continue;
             }
 
+            // 입력된 정수 판별
             if (selectNumber == 0) {
                 break kioskSystem;
             } else if (selectNumber > menuItems.size() || selectNumber < 0) {

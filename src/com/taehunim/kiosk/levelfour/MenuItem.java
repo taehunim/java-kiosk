@@ -22,17 +22,17 @@ public class MenuItem {
 
         // 기능
         // 저장한 이름을 꺼내주는 기능
-        public String getBurgerName() {
+        public String getGoodsName() {
             return goodsName;
         }
 
         // 저장한 가격을 꺼내주는 기능
-        public int getBurgerPrice() {
+        public int getGoodsPrice() {
             return goodsPrice;
         }
 
         // 저장한 설명을 꺼내주는 기능
-        public String getBurgerInfo() {
+        public String getGoodsInfo() {
             return goodsInfo;
         }
     }

@@ -8,6 +8,7 @@ public class Main {
         // 필수 객체 생성 및 Collection 생성
         Scanner scanner = new Scanner(System.in);
 
+        // burgerMenuItem List 생성
         List<MenuItem> burgerMenuItems = new ArrayList<>();
         burgerMenuItems.add(new MenuItem(
                         "ShackBurger",
@@ -34,6 +35,7 @@ public class Main {
                 )
         );
 
+        // drinkMenuItem List 생성
         List<MenuItem> drinkMenuItems = new ArrayList<>();
         drinkMenuItems.add(new MenuItem(
                         "상품이 준비중입니다.",
@@ -41,6 +43,8 @@ public class Main {
                         "상품이 준비중입니다."
                 )
         );
+
+        // desertMenuItem List 생성
         List<MenuItem> desertMenuItems = new ArrayList<>();
         desertMenuItems.add(new MenuItem(
                         "상품이 준비중입니다.",
@@ -50,10 +54,13 @@ public class Main {
         );
 
         Menu burgerMenu = new Menu("burger", burgerMenuItems);
-        Menu drinkMenu = new Menu("drink", burgerMenuItems);
-        Menu desertMenu = new Menu("desert", burgerMenuItems);
+        Menu drinkMenu = new Menu("drink", drinkMenuItems);
+        Menu desertMenu = new Menu("desert", desertMenuItems);
 
-        Kiosk kiosk = new Kiosk(scanner, burgerMenu, desertMenu, desertMenu);
+        Kiosk kiosk = new Kiosk(scanner, burgerMenu, drinkMenu, desertMenu);
+
+        // start method 호출
+        kiosk.start();
 
     }
 
