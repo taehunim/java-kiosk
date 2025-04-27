@@ -8,10 +8,24 @@ public class Menu {
     // 속성
     private String category;
 
-    List<MenuItem> menuItems;
+    private List<MenuItem> menuItems;
 
     // 생성자
-    Menu(MenuSelector menuSelector) {
+    Menu(String category, MenuSelector menuSelector) {
+        this.category = category;
         this.menuItems = menuSelector.getMenuItems();
     }
+
+    // 기능
+
+    public String getCategory() {
+        return category;
+    }
+
+    public List<MenuItem> getMenuItems() {
+        return menuItems;
+    }
+
 }
+
+

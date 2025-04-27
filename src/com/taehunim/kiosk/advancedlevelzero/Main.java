@@ -1,5 +1,7 @@
 package com.taehunim.kiosk.advancedlevelzero;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -12,9 +14,16 @@ public class Main {
         MenuSelector drinkMenuSelector = new DrinkMenuSelector();
         MenuSelector desertMenuSelector = new DesertMenuSelector();
 
+        Menu burgerMenu = new Menu("버거", burgerMenuSelector);
+        Menu drinkMenu = new Menu("음료", drinkMenuSelector);
+        Menu desertMenu = new Menu("디저트", desertMenuSelector);
 
+        List<Menu> totalMenu = new ArrayList<>();
+        totalMenu.add(burgerMenu);
+        totalMenu.add(drinkMenu);
+        totalMenu.add(desertMenu);
 
-        Kiosk kiosk = new Kiosk(interaction);
+        Kiosk kiosk = new Kiosk(interaction, totalMenu);
 
 
         // 필수 method 호출
