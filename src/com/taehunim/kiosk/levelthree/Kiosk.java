@@ -32,11 +32,16 @@ public class Kiosk {
         while (true) {
 
             // 메뉴 출력
+            System.out.println("[Real Buger 메뉴]");
             for (int i = 0; i < menuItems.size(); i++ ) {
                 MenuItem menu = menuItems.get(i);
                 System.out.println((i + 1) + ". " + menu.getBurgerName() + "   | W" +
                         (menu.getBurgerPrice() * 0.001) + " | " + menu.getBurgerInfo());
             }
+
+            // 안내문구 출력
+            System.out.println("주문하시려면 원하시는 메뉴의 번호를 입력하시면 주문이 완료됩니다.");
+            System.out.println("0을 입력하시면 프로그램을 종료합니다.");
 
             // 사용자 메뉴 선택
             System.out.print("입력창 : ");
