@@ -12,7 +12,7 @@ public class Main {
 
         List<MenuItem> menuItems =new ArrayList<>();
         menuItems.add(new MenuItem(
-                "ShackBuger",
+                "ShackBurger",
                 6900,
                 "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         menuItems.add(new MenuItem(
