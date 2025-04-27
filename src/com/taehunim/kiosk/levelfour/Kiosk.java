@@ -1,5 +1,6 @@
 package com.taehunim.kiosk.levelfour;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Kiosk {
@@ -11,6 +12,7 @@ public class Kiosk {
     private final Menu desertmenu;
     private String userInput;
     private int selectNumber;
+    private List<MenuItem> selectMenu;
 
     // 생성자
     public Kiosk(Scanner scanner, Menu menuA, Menu menuB, Menu menuC) {
@@ -28,7 +30,7 @@ public class Kiosk {
             System.out.println("1. " + burgermenu.getCategory());
             System.out.println("2. " + drinkmenu.getCategory());
             System.out.println("3. " + desertmenu.getCategory());
-            System.out.println("0을 입력하시면 프로그램을 종료합니다.");
+            System.out.println("0. 0을 입력시 시스템을 종료합니다.");
 
             System.out.print("입력창 : ");
             userInput = scanner.nextLine();
@@ -59,13 +61,21 @@ public class Kiosk {
                         System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
                         continue;
                     }
-
+                    selectMenu = burgermenu.getMenuItem();
                     if (selectNumber == 0) {
                         continue;
-                    } else if (selectNumber > burgermenu.getMenuItem().size() || selectNumber < 0) {
+                    } else if (selectNumber > selectMenu.size() || selectNumber < 0) {
                         System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
                     } else {
-                        System.out.println(burgermenu.getMenuItem().get((selectNumber - 1)).getGoodsName() + "주문 완료");
+                        selectMenu = burgermenu.getMenuItem();
+                        System.out.println(
+                                selectMenu.get(selectNumber - 1).getGoodsName() +
+                                        "   |   " +
+                                selectMenu.get(selectNumber - 1).getGoodsPrice() +
+                                        "W   |   " +
+                                selectMenu.get(selectNumber - 1).getGoodsInfo() +
+                                        " --- 주문 완료"
+                        );
                     }
                 }
                 case 2 -> drinkmenu.getMenuItems();
