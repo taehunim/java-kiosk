@@ -10,6 +10,7 @@ public class Main {
         List<MenuItem> menuItem = new ArrayList<>();
 
         String userInput;
+        int selectNumber;
 
         // collection을 활용해 Menuitem 저장
         menuItem.add(new MenuItem("ShackBuger", 6900,
@@ -35,6 +36,17 @@ public class Main {
             System.out.print("입력창 : ");
             userInput = scanner.nextLine();
 
+            // 입력된 문자열 정수로 변환
+            try {
+                selectNumber = Integer.parseInt(userInput);
+                if (selectNumber > menuItem.size() || selectNumber < 0) {
+                    System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
+                    continue;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
+                continue;
+            }
         }
     }
 }
