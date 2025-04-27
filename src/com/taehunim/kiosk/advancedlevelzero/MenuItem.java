@@ -1,4 +1,4 @@
-package com.taehunim.kiosk.advancelevelzero;
+package com.taehunim.kiosk.advancedlevelzero;
 
 public class MenuItem {
 

@@ -1,4 +1,4 @@
-package com.taehunim.kiosk.advancelevelzero;
+package com.taehunim.kiosk.advancedlevelzero;
 
 import java.util.Scanner;
 
@@ -21,7 +21,5 @@ public class Interaction {
     public void printStartKioskMessage() {
         System.out.println("메뉴를 선택해주세요.");
     }
-
-
 }
-}
+
