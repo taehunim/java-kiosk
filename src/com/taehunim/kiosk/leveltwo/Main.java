@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * kiosk의 필요한 기능을 담은 main class입니다.
+ * 프로그램을 실행합니다.
+ * Menuitem 객체를 List에 저장합니다.
+ * 저장할 때 직접 속성을 주입합니다.
+ * 반복문과 switch문을 통해 시스템의 흐름을 제어합니다.
+ * 사용자가 입력한 값에 따라 메뉴를 선택하거나 시스템을 종료시킬 수 있습니다.
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
