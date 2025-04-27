@@ -45,8 +45,8 @@ public class Main {
             // 메뉴 출력
             for (int i = 0; i < menuItems.size(); i++) {
                 MenuItem menu = menuItems.get(i);
-                System.out.println((i + 1) + ". " + menu.getBugerName() + "   | W" +
-                        (menu.getBugerPrice() * 0.001) + " | " + menu.getBugerInfo());
+                System.out.println((i + 1) + ". " + menu.getBurgerName() + "   | W" +
+                        (menu.getBurgerPrice() * 0.001) + " | " + menu.getBurgerInfo());
             }
 
             // 사용자 메뉴 선택
@@ -69,7 +69,7 @@ public class Main {
                 System.out.println("프로그램을 종료합니다.");
                 break kioskSystem;
             } else {
-                System.out.println(menuItems.get(selectNumber - 1).getBugerName() + " 주문 완료");
+                System.out.println(menuItems.get(selectNumber - 1).getBurgerName() + " 주문 완료");
             }
         }
     }
