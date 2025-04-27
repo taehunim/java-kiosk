@@ -2,6 +2,15 @@ package com.taehunim.kiosk.levelfour;
 
 import java.util.*;
 
+/**
+ * kiosk의 필요한 기능을 담은 main class입니다.
+ * 프로그램을 실행합니다.
+ * Menuitem 객체를 각각의 List에 저장합니다.
+ * Kiosk 객체를 생성할 때 Scanner 객체를 주입합니다.
+ * Menu 객체를 생성할 때 List를 주입합니다.
+ * 각 category별로 Menu 객체를 만듭니다.
+ * Kiosk.start method를 호출해 시스템을 시작합니다.
+ */
 public class Main {
     public static void main(String[] args) {
 
