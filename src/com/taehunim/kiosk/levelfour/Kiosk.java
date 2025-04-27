@@ -48,6 +48,7 @@ public class Kiosk {
 
                     System.out.println("[Real Burger 메뉴]");
                     burgermenu.getMenuItems();
+                    System.out.println("0   | 뒤로 가기");
 
                     System.out.print("입력창 : ");
                     userInput = scanner.nextLine();
@@ -60,7 +61,7 @@ public class Kiosk {
                     }
 
                     if (selectNumber == 0) {
-                        break kioskSystem;
+                        continue;
                     } else if (selectNumber > burgermenu.getMenuItem().size() || selectNumber < 0) {
                         System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
                     } else {
