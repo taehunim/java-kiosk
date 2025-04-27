@@ -8,31 +8,31 @@ package com.taehunim.kiosk.levelfour;
  */
 public class MenuItem {
 
-        // 속성
-        private final String goodsName;
-        private final String goodsInfo;
-        private final int goodsPrice;
+    // 속성
+    private final String goodsName;
+    private final String goodsInfo;
+    private final int goodsPrice;
 
-        // 생성자
-        MenuItem(String goodsName, int goodsPrice, String goodsInfo) {
-            this.goodsName = goodsName;
-            this.goodsPrice = goodsPrice;
-            this.goodsInfo = goodsInfo;
-        }
-
-        // 기능
-        // 저장한 이름을 꺼내주는 기능
-        public String getGoodsName() {
-            return goodsName;
-        }
-
-        // 저장한 가격을 꺼내주는 기능
-        public int getGoodsPrice() {
-            return goodsPrice;
-        }
-
-        // 저장한 설명을 꺼내주는 기능
-        public String getGoodsInfo() {
-            return goodsInfo;
-        }
+    // 생성자
+    MenuItem(String goodsName, int goodsPrice, String goodsInfo) {
+        this.goodsName = goodsName;
+        this.goodsPrice = goodsPrice;
+        this.goodsInfo = goodsInfo;
     }
+
+    // 기능
+    // 저장한 이름을 꺼내주는 기능
+    public String getGoodsName() {
+        return goodsName;
+    }
+
+    // 저장한 가격을 꺼내주는 기능
+    public int getGoodsPrice() {
+        return goodsPrice;
+    }
+
+    // 저장한 설명을 꺼내주는 기능
+    public String getGoodsInfo() {
+        return goodsInfo;
+    }
+}

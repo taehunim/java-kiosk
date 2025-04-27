@@ -60,7 +60,7 @@ public class Kiosk {
                 case 1 -> {
 
                     System.out.println("[Real Burger 메뉴]");
-                    burgermenu.getMenuItems();
+                    burgermenu.printMenuItems();
                     System.out.println("0   | 뒤로 가기");
 
                     // 버거 메뉴 선택 입력창
@@ -86,16 +86,16 @@ public class Kiosk {
                         System.out.println(
                                 selectMenu.get(selectNumber - 1).getGoodsName() +
                                         "   |   " +
-                                selectMenu.get(selectNumber - 1).getGoodsPrice() +
+                                        selectMenu.get(selectNumber - 1).getGoodsPrice() +
                                         "W   |   " +
-                                selectMenu.get(selectNumber - 1).getGoodsInfo() +
+                                        selectMenu.get(selectNumber - 1).getGoodsInfo() +
                                         " --- 주문 완료"
                         );
                     }
                 }
-                case 2 -> drinkmenu.getMenuItems();
+                case 2 -> drinkmenu.printMenuItems();
 
-                case 3 -> drinkmenu.getMenuItems();
+                case 3 -> drinkmenu.printMenuItems();
 
                 default -> System.out.println("잘못된 주문 번호 입니다.\n 다시 입력해주세요");
 
