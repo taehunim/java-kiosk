@@ -11,5 +11,9 @@ public class Main {
         MenuSelector burgerMenuSelector = new BurgerMenuSelector();
         MenuSelector drinkMenuSelector = new DrinkMenuSelector();
         MenuSelector desertMenuSelector = new DesertMenuSelector();
+
+
+
+        Kiosk kiosk = new Kiosk(interaction);
     }
 }
