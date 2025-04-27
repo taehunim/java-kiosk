@@ -3,6 +3,12 @@ package com.taehunim.kiosk.levelthree;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * kiosk의 흐름과 실행을 담당하는 Kiosk class입니다.
+ * 프로그램의 핵심 로직을 담당합니다.
+ * start method를 통해 핵심 로직을 구현합니다.
+ * 주입받은 List를 저장합니다.
+ */
 public class Kiosk {
 
     // 속성
