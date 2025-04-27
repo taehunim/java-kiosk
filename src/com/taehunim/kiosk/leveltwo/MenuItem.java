@@ -9,30 +9,30 @@ package com.taehunim.kiosk.leveltwo;
 public class MenuItem {
 
     // 속성
-    private final String bugerName;
-    private final String bugerInfo;
-    private final int bugerPrice;
+    private final String burgerName;
+    private final String burgerInfo;
+    private final int burgerPrice;
 
     // 생성자
-    MenuItem(String bugerName, int bugerPrice, String bugerInfo) {
-        this.bugerName = bugerName;
-        this.bugerPrice = bugerPrice;
-        this.bugerInfo = bugerInfo;
+    MenuItem(String burgerName, int burgerPrice, String burgerInfo) {
+        this.burgerName = burgerName;
+        this.burgerPrice = burgerPrice;
+        this.burgerInfo = burgerInfo;
     }
 
     // 기능
     // 저장한 이름을 꺼내주는 기능
     public String getBurgerName() {
-        return bugerName;
+        return burgerName;
     }
 
     // 저장한 가격을 꺼내주는 기능
     public int getBurgerPrice() {
-        return bugerPrice;
+        return burgerPrice;
     }
 
     // 저장한 설명을 꺼내주는 기능
     public String getBurgerInfo() {
-        return bugerInfo;
+        return burgerInfo;
     }
 }
