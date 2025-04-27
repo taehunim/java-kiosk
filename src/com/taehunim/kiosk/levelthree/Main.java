@@ -7,6 +7,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+/**
+ * kiosk의 필요한 기능을 담은 main class입니다.
+ * 프로그램을 실행합니다.
+ * Menuitem 객체를 List에 저장합니다.
+ * Kiosk 객체를 생성할 때 List Collection과 Scanner 객체를 주입합니다.
+ * Kiosk.start method를 호출해 시스템을 시작합니다.
+ */
         // 필수 객체 생성
         Scanner scanner = new Scanner(System.in);
 
@@ -32,8 +39,5 @@ public class Main {
 
         // 시작
         kiosk.start();
-
-
-
     }
 }
