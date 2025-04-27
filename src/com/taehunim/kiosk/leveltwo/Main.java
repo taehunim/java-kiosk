@@ -22,7 +22,7 @@ public class Main {
 
         // collection을 활용해 Menuitem 저장
         menuItems.add(new MenuItem(
-                "ShackBuger",
+                "ShackBurger",
                 6900,
                 "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         menuItems.add(new MenuItem(
