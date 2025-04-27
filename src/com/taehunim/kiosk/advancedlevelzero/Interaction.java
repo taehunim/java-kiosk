@@ -47,5 +47,14 @@ public class Interaction {
     public void printInputLocation() {
         System.out.print("입력 값: ");
     }
+
+    public int exceptionHandlingForStringtoint(String input) {
+    try {
+       return Integer.parseInt(input);
+    } catch (NumberFormatException e) {
+        return -1;
+    }
+
+    }
 }
 
