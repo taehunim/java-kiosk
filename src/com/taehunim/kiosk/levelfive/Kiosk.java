@@ -27,7 +27,7 @@ public class Kiosk {
         this.drinkmenu = menuB;
         this.desertmenu = menuC;
     }
-List
+
     // 기능
     public void start() {
 

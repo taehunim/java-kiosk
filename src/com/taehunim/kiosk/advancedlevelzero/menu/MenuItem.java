@@ -1,5 +1,7 @@
 package com.taehunim.kiosk.advancedlevelzero.menu;
 
+import java.util.List;
+
 public class MenuItem {
 
     // 속성
@@ -15,4 +17,15 @@ public class MenuItem {
     }
 
     // 기능
+    public String printProductName () {
+        return productName;
+    }
+
+    public String printProductInfo () {
+        return productInfo;
+    }
+
+    public int printProductPrice () {
+        return productPrice;
+    }
 }

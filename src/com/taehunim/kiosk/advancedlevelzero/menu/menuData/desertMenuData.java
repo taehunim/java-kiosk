@@ -1,9 +1,11 @@
-package com.taehunim.kiosk.advancedlevelzero.menu;
+package com.taehunim.kiosk.advancedlevelzero.menu.menuData;
+
+import com.taehunim.kiosk.advancedlevelzero.menu.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class desertMenuData implements MenuData{
+public class desertMenuData implements MenuData {
     @Override
     public List<MenuItem> menuDataOfProduct() {
         List list = new ArrayList<>();
