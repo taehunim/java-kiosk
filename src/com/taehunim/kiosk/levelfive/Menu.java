@@ -37,9 +37,9 @@ public class Menu {
                     (menu.getGoodsPrice() * 0.001) + " | " + menu.getGoodsInfo());
         }
     }
-
+List
     public List<MenuItem> getMenuItem() {
         return menuItems;
     }
-
+List
 }
