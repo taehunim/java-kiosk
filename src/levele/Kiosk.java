@@ -10,11 +10,13 @@ public class Kiosk {
     // 속성
     private final List<Menu> menus = new ArrayList<>();
     private final Scanner scanner;
+    private final Cart cart;
     private final List<String> categories = new ArrayList<>();
 
     // 생성자
-    public Kiosk(Scanner scanner, Menu burgerMenu, Menu drinkMenu, Menu desertMenu) {
+    public Kiosk(Scanner scanner, Cart cart, Menu burgerMenu, Menu drinkMenu, Menu desertMenu) {
         this.scanner = scanner;
+        this.cart = cart;
         this.menus.add(burgerMenu);
         this.menus.add(drinkMenu);
         this.menus.add(desertMenu);
@@ -26,31 +28,82 @@ public class Kiosk {
     public void start() {
         kioskSystem:
         while (true) {
+            if (cart.getCartItem().size() == 0) {
+                // 카테고리 출력
+                outputCategory(categories);
 
-            // 카테고리 출력
-            outputCategory(categories);
+                // 문자열 입력
+                String userInputCategory = inputString();
 
-            // 문자열 입력
-            String userInputCategory = inputString();
+                // 문자열 정수 변환
+                int userSelectCategoryNumber = changeStringtoInt(userInputCategory);
 
-            // 문자열 정수 변환
-            int userSelectCategoryNumber = changeStringtoInt(userInputCategory);
-
-            // 조건문 사용
-            // 메뉴가 제시된 후 숫자의 입력에 따라 다른 로직을 실행
-            // 반복문을 사용하여 특정 번호가 입력되면 프로그램 종료
-            switch (userSelectCategoryNumber) {
-                case 0 -> {
-                    break kioskSystem;
+                // 조건문 사용
+                // 메뉴가 제시된 후 숫자의 입력에 따라 다른 로직을 실행
+                // 반복문을 사용하여 특정 번호가 입력되면 프로그램 종료
+                switch (userSelectCategoryNumber) {
+                    case 0 -> {
+                        break kioskSystem;
+                    }
+                    case 1, 2, 3 -> {
+                        outputMenu(userSelectCategoryNumber);
+                        System.out.println();
+                        String userInputMenu = inputString();
+                        int userSelectMenuNumber = changeStringtoInt(userInputMenu);
+                        selectMenu(userSelectCategoryNumber, userSelectMenuNumber);
+                    }
+                    default -> System.out.println("올바른 값을 입력해주세요.");
                 }
-                case 1, 2, 3 -> {
-                    outputMenu(userSelectCategoryNumber);
-                    System.out.println();
-                    String userInputMenu = inputString();
-                    int userSelectMenuNumber = changeStringtoInt(userInputMenu);
-                    selectMenu(userSelectCategoryNumber, userSelectMenuNumber);
+            } else {
+                // 카테고리 출력
+                outputCategory(categories);
+
+
+                System.out.println("[ ORDER MENU ]");
+                System.out.println("4. Orders       | 장바구니를 확인 후 주문합니다.");
+                System.out.println("5. Cancel       | 진행중인 주문을 취소합니다.");
+
+                // 문자열 입력
+                String userInputCategory = inputString();
+
+                // 문자열 정수 변환
+                int userSelectCategoryNumber = changeStringtoInt(userInputCategory);
+                switch (userSelectCategoryNumber) {
+                    case 0 -> {
+                        break kioskSystem;
+                    }
+                    case 1, 2, 3 -> {
+                        outputMenu(userSelectCategoryNumber);
+                        System.out.println();
+                        String userInputMenu = inputString();
+                        int userSelectMenuNumber = changeStringtoInt(userInputMenu);
+                        selectMenu(userSelectCategoryNumber, userSelectMenuNumber);
+                    }
+                    case 4 -> {
+                        int result = 0;
+                        System.out.println("[ Orders ]");
+                        for (MenuItem cartitem : cart.getCartItem()) {
+                            System.out.println(cartitem.getProductName() + "\t| W " +
+                                    (cartitem.getProductPrice() / 1000.0) + " |\t + " + cartitem.getProductInfo()
+                            );
+                        }
+                        System.out.println("[ Total ]");
+                        for (MenuItem cartitem : cart.getCartItem()) {
+                            result += cartitem.getProductPrice();
+                        }
+                        System.out.println(result);
+                        System.out.println("1. 주문      2. 메뉴판");
+                        int userSelectOrderNumber = changeStringtoInt(inputString());
+                        switch (userSelectOrderNumber) {
+                            case 1 -> {
+                                System.out.println("주문이 완료되었습니다. 금액은 W " + (result * 0.001) + "입니다.");
+                            }
+                            case 2 -> {}
+                        }
+                    }
+                    case 5 -> cart.removeAllItem();
+                    default -> System.out.println("올바른 값을 입력해주세요.");
                 }
-                default -> System.out.println("올바른 값을 입력해주세요.");
             }
         }
     }
@@ -97,9 +150,20 @@ public class Kiosk {
         if (userSelectMenuNumber == 0) {
         } else if (userSelectMenuNumber <= menuItems.size() && userSelectMenuNumber > 0) {
             MenuItem menuItem = menuItems.get(userSelectMenuNumber - 1);
-            System.out.println("선택한 메뉴: " + menuItem.getProductName() + "\t| W " +
+            System.out.println(menuItem.getProductName() + "\t| W " +
                     (menuItem.getProductPrice() / 1000.0) + " |\t + " + menuItem.getProductInfo()
             );
+            System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
+            System.out.println("1. 확인 \t\t\t\t 2. 취소");
+            int userSelectCartNumber = changeStringtoInt(inputString());
+            switch (userSelectCartNumber) {
+                case 1 -> {
+                    System.out.println(menuItem.getProductName() + " 이 장바구니에 추가되었습니다.");
+                    cart.addCart(menuItem);
+                }
+                default -> {
+                }
+            }
         } else {
             System.out.println("올바른 값을 입력해주세요");
         }
