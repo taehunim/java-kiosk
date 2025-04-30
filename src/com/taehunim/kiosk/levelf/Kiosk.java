@@ -30,9 +30,9 @@ public class Kiosk {
         for (int i = 0; i < menus.size(); i++) {
             System.out.println((i + 1) + ". " + menus.get(i).getCategory());
         }
-        if (cart.getCartItems().isEmpty())
+        if (cart.getCartItems().isEmpty());
 
 
         }
     }
-}
+
