@@ -18,7 +18,7 @@ public class Main {
             System.out.println("2. SmokeShack\t| W 8.9 |\t베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
             System.out.println("3. Cheeseburger\t| W 6.9 |\t포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
             System.out.println("4. Hamburger\t| W 5.4 |\t비프패티를 기반으로 야채가 들어간 기본버거");
-            System.out.println("0. 종료\t\t\t|   종료");
+            System.out.println("0. 종료\t\t\t|  종료  |");
 
             // 스캐너 객체 활용
             System.out.print("입력 창: ");
