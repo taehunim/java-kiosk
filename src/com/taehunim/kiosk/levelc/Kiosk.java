@@ -10,7 +10,7 @@ public class Kiosk {
     private final Scanner scanner;
 
     // 생성자
-    Kiosk(Scanner scanner, List<MenuItem> menuItems) {
+    public Kiosk(Scanner scanner, List<MenuItem> menuItems) {
         this.scanner = scanner;
         this.menuItems = menuItems;
     }

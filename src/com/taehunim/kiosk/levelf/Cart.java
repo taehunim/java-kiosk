@@ -4,20 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
+    // 속성
+    private final List<CartItem> cartItems = new ArrayList<>();
 
-        private final List<MenuItem> cartItem = new ArrayList<>();
+    // 생성자
 
-        public void addCart(MenuItem menuItem) {
-            cartItem.add(menuItem);
-        }
+    // 기능
+    public List<CartItem> getCartItems() {
+        return cartItems;
+    }
 
-        public void removeAllItem() {
-            cartItem.clear();
-        }
-
-        public List<MenuItem> getCartItem() {
-            return cartItem;
-        }
+    public void clearCart() {
+        cartItems.clear();
     }
 
 
