@@ -65,7 +65,6 @@ public class Main {
         Menu burgerMenu = new Menu("burger", burgerMenuItems);
         Menu drinkMenu = new Menu("drink", drinkMenuItems);
         Menu desertMenu = new Menu("desert", desertMenuItems);
-        new Menu("123")
         Kiosk kiosk = new Kiosk(scanner, burgerMenu, drinkMenu, desertMenu);
 
         // start method 호출

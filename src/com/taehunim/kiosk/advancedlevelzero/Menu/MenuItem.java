@@ -9,7 +9,7 @@ public class MenuItem {
     private final int productPrice;
 
     // 생성자
-    MenuItem(String productName, String productInfo, String productCategory, int productPrice) {
+    MenuItem(String productCategory, String productName, String productInfo, int productPrice) {
         this.productName = productName;
         this.productInfo = productInfo;
         this.productCategory = productCategory;
