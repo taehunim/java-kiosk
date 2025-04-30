@@ -8,20 +8,16 @@ import java.util.Scanner;
 public class Kiosk {
 
     // 속성
-    private final List<Menu> menus = new ArrayList<>();
+    private final List<Menu> menus;
     private final Scanner scanner;
     private final Cart cart;
     private final List<String> categories = new ArrayList<>();
 
     // 생성자
-    public Kiosk(Scanner scanner, Cart cart, Menu burgerMenu, Menu drinkMenu, Menu desertMenu) {
+    public Kiosk(Scanner scanner, Cart cart, List<Menu> menus) {
         this.scanner = scanner;
         this.cart = cart;
-        this.menus.add(burgerMenu);
-        this.menus.add(drinkMenu);
-        this.menus.add(desertMenu);
-        for (int i = 0; i < menus.size(); i++)
-            categories.add(menus.get(i).getCategory());
+        this.menus = menus;
     }
 
     // 메소드

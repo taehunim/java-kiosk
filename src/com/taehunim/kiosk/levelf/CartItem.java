@@ -3,19 +3,12 @@ package com.taehunim.kiosk.levelf;
 public class CartItem {
 
     // 속성
-    private final MenuItem menuitem;
+    private final MenuItem cartItem;
 
     // 생성자
-    CartItem(MenuItem menuItem) {
-        this.menuitem = menuItem;
+    public CartItem(MenuItem cartItem) {
+        this.cartItem = cartItem;
     }
 
-    // 기능
-    public MenuItem getMenuitem() {
-        return menuitem;
-    }
 
-    public MenuItem getMenuitem() {
-        return menuitem;
-    }
 }

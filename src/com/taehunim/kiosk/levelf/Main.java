@@ -73,10 +73,9 @@ public class Main {
                 new Menu("Dessert", desserts)
         );
 
-
         Scanner scanner = new Scanner(System.in);
-        Kiosk kiosk = new Kiosk(scanner, menus);
-
+        Cart cart = new Cart();
+        Kiosk kiosk = new Kiosk(scanner, menus, cart);
 
     }
 }
