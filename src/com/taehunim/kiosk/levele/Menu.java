@@ -1,4 +1,4 @@
-package leveld;
+package com.taehunim.kiosk.levele;
 
 import java.util.List;
 

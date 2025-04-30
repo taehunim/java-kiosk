@@ -1,4 +1,4 @@
-package levele;
+package com.taehunim.kiosk.leveld;
 
 
 import java.util.ArrayList;
@@ -74,14 +74,12 @@ public class Main {
                 )
         );
 
-        Cart cart = new Cart();
-
         Menu burgerMenu = new Menu("Burger", burgerMenuItems);
         Menu drinkMenu = new Menu("Drink", drinkMenuItems);
         Menu desertMenu = new Menu("Desert", desertMenuItems);
 
         Scanner scanner = new Scanner(System.in);
-        Kiosk kiosk = new Kiosk(scanner, cart, burgerMenu, drinkMenu, desertMenu);
+        Kiosk kiosk = new Kiosk(scanner, burgerMenu, drinkMenu, desertMenu);
 
         kiosk.start();
 

@@ -1,4 +1,4 @@
-package levelc;
+package com.taehunim.kiosk.levelc;
 
 /**
  * 개별 음식 항목을 관리하는 클래스

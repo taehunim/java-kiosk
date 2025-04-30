@@ -1,8 +1,5 @@
-package levelb;
+package com.taehunim.kiosk.levele;
 
-/**
- * 개별 음식 항목을 관리하는 클래스
- */
 public class MenuItem {
 
     // 속성
@@ -17,7 +14,6 @@ public class MenuItem {
         this.productInfo = productInfo;
     }
 
-
     // 기능
     public String getProductName() {
         return productName;
@@ -31,3 +27,4 @@ public class MenuItem {
         return productInfo;
     }
 }
+

@@ -1,4 +1,4 @@
-package leveld;
+package com.taehunim.kiosk.leveld;
 
 public class MenuItem {
 
