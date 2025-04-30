@@ -6,15 +6,24 @@ import java.util.List;
 public class Cart {
     private final List<MenuItem> cartItem = new ArrayList<>();
 
-    public void addCart (MenuItem menuItem) {
+    public void addCart(MenuItem menuItem) {
         cartItem.add(menuItem);
     }
 
-    public void removeAllItem () {
+    public void clearCart() {
         cartItem.clear();
     }
 
-    public List<MenuItem> getCartItem () {
+    public List<MenuItem> getCartItem() {
         return cartItem;
     }
+
+    public int totalPrice() {
+        int totalPrice = -1;
+        for (MenuItem item : cartItem) {
+            totalPrice += item.getProductPrice();
+        }
+        return totalPrice;
+    }
 }
+
