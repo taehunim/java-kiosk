@@ -113,5 +113,5 @@ public class Kiosk {
         System.out.println("[ Total ]");
         int totalprice = cart.totalPrice();
         System.out.printf("W %.1f\n", (double) totalprice);
-    }g
+    }
 }
