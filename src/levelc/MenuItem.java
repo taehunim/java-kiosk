@@ -1,7 +1,7 @@
-package leveltwo;
+package levelc;
 
 /**
- *  개별 음식 항목을 관리하는 클래스
+ * 개별 음식 항목을 관리하는 클래스
  */
 public class MenuItem {
 
@@ -16,7 +16,6 @@ public class MenuItem {
         this.productPrice = productPrice;
         this.productInfo = productInfo;
     }
-
 
     // 기능
     public String getProductName() {
