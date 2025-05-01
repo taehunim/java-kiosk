@@ -65,12 +65,22 @@ public class Kiosk {
                 System.out.println("1. 주문   2. 메뉴판");
                 int orderSelect = inputInt();
                 if (orderSelect == 1) {
+
+                    // 할인 정보 입력
+                    System.out.println("");
+                    if ()
+
+
+
+
                     System.out.println("주문이 완료되었습니다.");
                     System.out.print("금액은 ");
                     int totalprice = cart.totalPrice();
                     System.out.printf("W %.1f", (double) totalprice);
                     System.out.println(" 입니다\n");
                     cart.clearCart();
+
+
                 }
             } else if (categorySelect == 5 && !cart.getCartItem().isEmpty()) {
                 System.out.println("주문을 취소합니다.");
