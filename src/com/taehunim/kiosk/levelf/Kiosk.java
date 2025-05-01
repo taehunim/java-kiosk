@@ -73,17 +73,18 @@ public class Kiosk {
                         System.out.println(i + ". " + userType.name() + " : " + userType.getDiscountRate() * 100 + "%");
                     }
 
+                    // 할인률 선택 후 계산
                     int typeSelect = inputInt();
-                    if (typeSelect > 0 && typeSelect < UserType.values().length) {
+                    if (typeSelect >= 1 && typeSelect <= UserType.values().length) {
                         System.out.println("주문이 완료되었습니다.");
                         System.out.print("금액은 ");
-                        int totalPrice = cart.totalPrice();
-                        int realTotalPrice = totalPrice * UserType.
-                        System.out.printf("W %.1f", (double) totalPrice);
+                        double totalPrice = (double) cart.totalPrice();
+                        double discountRate = (1 - UserType.values()[typeSelect - 1].getDiscountRate());
+                        double realTotalPrice = totalPrice * discountRate;
+                        System.out.printf("W %.1f", totalPrice);
                         System.out.println(" 입니다\n");
                         cart.clearCart();
                     }
-
 
                 }
             } else if (categorySelect == 5 && !cart.getCartItem().isEmpty()) {
