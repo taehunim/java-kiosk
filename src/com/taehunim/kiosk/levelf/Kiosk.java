@@ -68,7 +68,7 @@ public class Kiosk {
 
                     // 할인 정보 출력
                     System.out.println("할인 정보를 입력해주세요.");
-                    for(UserType userType : UserType.values()) {
+                    for (UserType userType : UserType.values()) {
                         int i = 1;
                         System.out.println(i + ". " + userType.name() + " : " + userType.getDiscountRate() * 100 + "%");
                     }
@@ -81,7 +81,7 @@ public class Kiosk {
                         double totalPrice = (double) cart.totalPrice();
                         double discountRate = (1 - UserType.values()[typeSelect - 1].getDiscountRate());
                         double realTotalPrice = totalPrice * discountRate;
-                        System.out.printf("W %.1f", totalPrice);
+                        System.out.printf("W %.1f", realTotalPrice);
                         System.out.println(" 입니다\n");
                         cart.clearCart();
                     }
@@ -109,11 +109,17 @@ public class Kiosk {
     }
 
     // 카테고리 출력 창
+    int categoryNumber = 1;
     public void printMainMenu() {
         System.out.println("[ MAIN MENU ]");
-        for (int i = 0; i < menus.size(); i++) {
-            System.out.println((i + 1) + ". " + menus.get(i).getCategory());
-        }
+        menus.stream().map(menu -> menu.getCategory()).
+                forEach(category -> {
+                    System.out.println(categoryNumber + ". " + category);
+                    categoryNumber++;
+                });
+//        for (int i = 0; i < menus.size(); i++) {
+//            System.out.println((i + 1) + ". " + menus.get(i).getCategory());
+//        }
         if (!cart.getCartItem().isEmpty()) {
             System.out.println("[ ORDER MENU ]");
             System.out.println("4. Orders       | 장바구니를 확인 후 주문합니다.");

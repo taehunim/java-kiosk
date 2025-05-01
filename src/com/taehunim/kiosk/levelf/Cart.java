@@ -2,6 +2,7 @@ package com.taehunim.kiosk.levelf;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * 장바구니에 관련된 역할을 수행하는 클래스
@@ -40,6 +41,13 @@ public class Cart {
             totalPrice += item.getProductPrice();
         }
         return totalPrice;
+    }
+
+    public void removeItem(String input) {
+        Optional<MenuItem> removeItem = cartItem.stream().filter(item -> item.getProductName().equals(input)).findFirst();
+        if(removeItem.isPresent()) {
+            cartItem.remove(removeItem.get());
+        }
     }
 }
 
