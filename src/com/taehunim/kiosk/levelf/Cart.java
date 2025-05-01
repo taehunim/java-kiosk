@@ -43,10 +43,14 @@ public class Cart {
         return totalPrice;
     }
 
-    public void removeItem(String input) {
+    // 제품 조회 후 삭제
+    public boolean removeItem(String input) {
         Optional<MenuItem> removeItem = cartItem.stream().filter(item -> item.getProductName().equals(input)).findFirst();
         if(removeItem.isPresent()) {
             cartItem.remove(removeItem.get());
+            return true;
+        } else {
+            return false;
         }
     }
 }

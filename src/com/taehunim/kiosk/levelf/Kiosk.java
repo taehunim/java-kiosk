@@ -4,6 +4,7 @@ package com.taehunim.kiosk.levelf;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 시스템의 흐름을 담당하는 클래스
@@ -87,7 +88,17 @@ public class Kiosk {
                     }
 
                 }
+
             } else if (categorySelect == 5 && !cart.getCartItem().isEmpty()) {
+                System.out.println("입력한 상품을 취소합니다.");
+                String nameInput = scanner.nextLine();
+                boolean whichDisplay = cart.removeItem(nameInput);
+                if (whichDisplay == true) {
+                    System.out.println(nameInput + " 삭제완료");
+                } else {
+                    System.out.println("해당 항목이 없습니다.");
+                }
+            } else if (categorySelect == 6 && !cart.getCartItem().isEmpty()) {
                 System.out.println("주문을 취소합니다.");
                 cart.clearCart();
                 continue;
@@ -109,21 +120,29 @@ public class Kiosk {
     }
 
     // 카테고리 출력 창
-    int categoryNumber = 1;
+
+
     public void printMainMenu() {
+        AtomicInteger categoryNumber = new AtomicInteger(1);
         System.out.println("[ MAIN MENU ]");
         menus.stream().map(menu -> menu.getCategory()).
                 forEach(category -> {
-                    System.out.println(categoryNumber + ". " + category);
-                    categoryNumber++;
-                });
-//        for (int i = 0; i < menus.size(); i++) {
-//            System.out.println((i + 1) + ". " + menus.get(i).getCategory());
-//        }
+                            System.out.println(categoryNumber + ". " + category);
+                            // 람다 안에서는 람다 철학을 준수하기 위해 외부의 값을 수정하지 못하게 막아논것이다.
+                            // 람다는 외부 변수들을 final형식으로 받아드린다.
+                            // 그렇기에 기본형으로 할당된 변수는 아예 건드릴 수 없기 때문에 래퍼클래스를 사용한다.
+                            // 이후 메소드를 사용하여 간접적으로 값을 변경할 수 있다.
+                            categoryNumber.getAndIncrement();
+                        }
+                );
+
+
         if (!cart.getCartItem().isEmpty()) {
             System.out.println("[ ORDER MENU ]");
             System.out.println("4. Orders       | 장바구니를 확인 후 주문합니다.");
-            System.out.println("5. Cancel       | 진행중인 주문을 취소합니다.");
+            System.out.println("5. Item Cancel  | 특정 항목을 제거합니다.");
+            System.out.println("6. Cancel       | 진행중인 주문을 취소합니다.");
+
         }
         System.out.println("0. 종료");
 
@@ -132,14 +151,17 @@ public class Kiosk {
     // 입력한 숫자에 따라 메뉴 출력
     public void printMenu(Menu menu) {
         System.out.println("[ " + menu.getCategory() + " ]");
-        for (int i = 0; i < menu.getMenuItems().size(); i++) {
-            MenuItem item = menu.getMenuItems().get(i);
-            System.out.printf("%d. %s | W %.1f | %s\n", i + 1,
-                    item.getProductName(),
-                    (double) item.getProductPrice() / 1000,
-                    item.getProductInfo()
-            );
-        }
+        AtomicInteger menuNumber = new AtomicInteger(1);
+        menu.getMenuItems().stream().
+                forEach(item -> {
+                            System.out.printf("%d. %s | W %.1f | %s\n",
+                                    menuNumber.get(),
+                                    item.getProductName(),
+                                    (double) item.getProductPrice() / 1000,
+                                    item.getProductInfo()
+                            );
+                            menuNumber.getAndIncrement();
+                        });
         System.out.println("0. 뒤로가기");
     }
 
