@@ -50,6 +50,6 @@ Stream API, Enum, ENcaptulation등 다양한 자바 고급 기능을 활용 했�
 - 콘솔 기반의 프로그램이라 사용자에게 깔끔하게 정리된 데이터를 보여줄 수 없는게 아쉬웠습니다.
 - 클래스를 좀 더 세분화 하여 설계할 수 있었던 것 같은데 Kiosk에 과도한 책임을 부여한 거 같아 아쉽습니다.  
                       
-                                                                                                          ### 개발자
-                                                                                                          - 이름   : IM TEAHUN
-                                                                                                          - Github : https://github.com/taehunim
+  ### 개발자
+ - 이름   : IM TEAHUN
+ - Github : https://github.com/taehunim
