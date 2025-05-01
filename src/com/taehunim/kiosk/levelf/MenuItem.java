@@ -1,4 +1,4 @@
-package com.taehunim.kiosk.levele;
+package com.taehunim.kiosk.levelf;
 
 /**
 * 메뉴 제품의 속성 정보를 가지고 있는 클래스
