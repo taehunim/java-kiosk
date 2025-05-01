@@ -66,19 +66,23 @@ public class Kiosk {
                 int orderSelect = inputInt();
                 if (orderSelect == 1) {
 
-                    // 할인 정보 입력
-                    System.out.println("");
-                    if ()
+                    // 할인 정보 출력
+                    System.out.println("할인 정보를 입력해주세요.");
+                    for(UserType userType : UserType.values()) {
+                        int i = 1;
+                        System.out.println(i + ". " + userType.name() + " : " + userType.getDiscountRate() * 100 + "%");
+                    }
 
-
-
-
-                    System.out.println("주문이 완료되었습니다.");
-                    System.out.print("금액은 ");
-                    int totalprice = cart.totalPrice();
-                    System.out.printf("W %.1f", (double) totalprice);
-                    System.out.println(" 입니다\n");
-                    cart.clearCart();
+                    int typeSelect = inputInt();
+                    if (typeSelect > 0 && typeSelect < UserType.values().length) {
+                        System.out.println("주문이 완료되었습니다.");
+                        System.out.print("금액은 ");
+                        int totalPrice = cart.totalPrice();
+                        int realTotalPrice = totalPrice * UserType.
+                        System.out.printf("W %.1f", (double) totalPrice);
+                        System.out.println(" 입니다\n");
+                        cart.clearCart();
+                    }
 
 
                 }

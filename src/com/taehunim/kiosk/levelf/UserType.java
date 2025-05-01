@@ -23,7 +23,7 @@ public enum UserType {
 
     // 기능
     public double getDiscountRate() {
-        return getDiscountRate();
+        return discountRate;
     }
 
 }
